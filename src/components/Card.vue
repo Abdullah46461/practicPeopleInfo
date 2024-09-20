@@ -1,8 +1,8 @@
 <template>
   <el-card style="max-width: 480px" class="carda">
-    <template #header>{{user.username}}</template>
-    <el-avatar :size="50" icon="UserFilled" />
-    <template #footer>Yummy hamburger</template>
+    <template #header>{{user.username}} <br> </template>
+    <el-avatar :size="90" icon="UserFilled" />
+    <template class="foot" #footer>{{user.email}} <br> phone: {{user.phone}}</template>
 
   </el-card>
 </template>
@@ -21,7 +21,7 @@ computed:{
 
 <style lang="css" scoped>
 .carda{
-  width: 100%;
   margin: 10px;
 }
+
 </style>
