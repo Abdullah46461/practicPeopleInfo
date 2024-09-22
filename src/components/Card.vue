@@ -8,20 +8,19 @@
 </template>
 
 <script lang="ts">
-import { mapState } from 'vuex'
 
 
 export default {
   props: ['user'],
-computed:{
-  ...mapState(['users'])
-}
+mounted() {
+    // console.log(this.user)
+},
 }
 </script>
 
 <style lang="css" scoped>
 .carda{
-  margin: 10px;
+  margin: 5px;
 }
 
 </style>

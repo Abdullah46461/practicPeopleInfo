@@ -3,9 +3,12 @@
 </script>
 
 <template>
+
   <el-container class="container">
-    <el-header>Header</el-header>
-    <el-main class="ai"> <router-view/></el-main>
+
+    <el-main class="ai">
+      <router-view/>
+    </el-main>
     <el-footer>Footer</el-footer>
   </el-container>
 </template>
