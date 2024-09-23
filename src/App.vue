@@ -1,23 +1,14 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-
-  <el-container class="container">
-
-    <el-main class="ai">
-      <router-view/>
-    </el-main>
-    <el-footer>Footer</el-footer>
-  </el-container>
+  <router-view />
 </template>
 
 <style scoped>
 .container {
   width: 100%;
 }
-.ai{
+.ai {
   width: 100%;
 }
 </style>

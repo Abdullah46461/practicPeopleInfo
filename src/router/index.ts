@@ -9,7 +9,7 @@ const router = createRouter({
       component: () => import('../views/HomePage.vue')
     },
     {
-      path: '/cardPage',
+      path: '/cardPage/:id',
       name: 'cardPage',
       component: () => import('../views/CardPage.vue')
     }
