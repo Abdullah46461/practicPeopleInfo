@@ -35,7 +35,7 @@ export default createStore({
           .get(`https://fakestoreapi.com/users?${rev}`)
           .then((res) => store.commit('setUsers', res.data))
       } catch (err) {
-        console.log(err)
+        console.error(err)
       }
     }
   }
