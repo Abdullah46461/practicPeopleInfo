@@ -5,15 +5,15 @@ export default createStore({
   state() {
     return {
       users: [],
-      singleUser: []
+      singleUser: {}
     }
   },
 
   mutations: {
-    singleUser(state: any, payload: object[]) {
+    singleUser(state: any, payload: object): void {
       state.singleUser = payload
     },
-    setUsers(state: any, payload: object[]) {
+    setUsers(state: any, payload: object[]): void {
       state.users = payload
     }
   },

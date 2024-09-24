@@ -1,5 +1,5 @@
 <template>
-  <el-dropdown>
+  <el-dropdown class="w-full">
     <span class="el-dropdown-link">
       Порядок отображения
       <el-icon class="el-icon--right">
@@ -13,12 +13,8 @@
       </el-dropdown-menu>
     </template>
   </el-dropdown>
-  <div>
-    <el-row :gutter="15">
-      <el-col :span="8" v-for="user in users" :key="user.id">
-        <Card :user="user"></Card>
-      </el-col>
-    </el-row>
+  <div class="home-page__row">
+    <Card v-for="user in users" :key="user.id" :user="user"></Card>
   </div>
 </template>
 
@@ -50,4 +46,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="css" scoped>
+.home-page__row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+</style>
