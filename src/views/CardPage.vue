@@ -50,7 +50,7 @@ export default {
 
 <style lang="css" scoped>
 .header {
-  background: red;
+  background: white;
   padding: 10px;
   width: 100%;
 }
