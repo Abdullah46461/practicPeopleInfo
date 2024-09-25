@@ -13,6 +13,7 @@
       </el-dropdown-menu>
     </template>
   </el-dropdown>
+
   <div class="home-page__row">
     <Card v-for="user in users" :key="user.id" :user="user"></Card>
   </div>
@@ -21,21 +22,18 @@
 <script lang="ts">
 import Card from '@/components/Card.vue'
 import { mapActions, mapState } from 'vuex'
-import { Select } from '@element-plus/icons-vue'
 
 export default {
   data() {
     return {}
   },
 
-  components: { Select, Card },
+  components: { Card },
   mounted() {
     this.fetchUserInfo()
-    // this.fetchSingleUser(user.id)
-    console.log(this.user)
   },
   methods: {
-    reverse(rev: string) {
+    reverse(rev: string): void {
       this.$store.dispatch('fetchUserInfo', rev)
     },
     ...mapActions(['fetchUserInfo', 'fetchSingleUser'])
@@ -50,6 +48,22 @@ export default {
 .home-page__row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 15px;
+  gap: 20px;
+}
+@media (max-width: 1200px) {
+  .home-page__row {
+    font-size: 15px;
+  }
+}
+@media (max-width: 768px) {
+  .home-page__row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 580px) {
+  .home-page__row {
+    grid-template-columns: repeat(2, 1fr);
+    font-size: 10px;
+  }
 }
 </style>

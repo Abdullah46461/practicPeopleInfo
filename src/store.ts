@@ -4,6 +4,7 @@ import axios from 'axios'
 export default createStore({
   state() {
     return {
+      loader: false,
       users: [],
       singleUser: {}
     }
@@ -20,13 +21,14 @@ export default createStore({
 
   actions: {
     async fetchSingleUser(store: any, id: number) {
+      store.state.loader = true
       try {
-        await axios
-          .get(`https://fakestoreapi.com/users/${id}`)
-          .then((res) => store.commit('singleUser', res.data))
-        console.log(store.singleUser)
+        const res = await axios.get(`https://fakestoreapi.com/users/${id}`)
+        store.commit('singleUser', res.data)
       } catch (err) {
         console.log(err)
+      } finally {
+        store.state.loader = false
       }
     },
     async fetchUserInfo(store: any, rev: string) {

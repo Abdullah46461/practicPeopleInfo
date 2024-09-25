@@ -11,6 +11,7 @@
 
 <script lang="ts">
 import cardPage from '@/views/CardPage.vue'
+import type { IUserInfo } from '@/types'
 
 export default {
   computed: {
@@ -18,10 +19,13 @@ export default {
       return cardPage
     }
   },
-  props: ['user'],
-  mounted() {
-    console.log(this.user)
-  }
+  props: {
+    user: {
+      type: Object as () => IUserInfo,
+      default: null
+    }
+  },
+  mounted() {}
 }
 </script>
 
